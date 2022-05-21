@@ -35,15 +35,8 @@ public class HandPresence : MonoBehaviour
     {
         List<InputDevice> devices = new List<InputDevice>();
 
-
-        //InputDeviceCharacteristics chars = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
 
-        /* foreach (InputDevice dev in devices)
-        {
-            Debug.Log(dev.name + " " + dev.characteristics);
-        }*/
 
         if (devices.Count > 0)
         {
@@ -73,12 +66,10 @@ public class HandPresence : MonoBehaviour
     {
         if (!targetDevice.isValid)
         {
-            //TryInitialize();
+            TryInitialize();
         }
         else
         {
-            // TestInputs();
-
             // set controller / hand active/deactive
             spawnedHand.SetActive(!showController);
             spawnedController.SetActive(showController);
@@ -114,28 +105,4 @@ public class HandPresence : MonoBehaviour
         }
     }
 
-    private void TestInputs()
-    {
-        if (targetDevice == null) return;
-        if (targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool pressed))
-        {
-            Debug.Log("Primary pressed: " + pressed);
-        }
-        if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
-        {
-            Debug.Log("Trigger pressed: " + triggerValue);
-        }
-        if (targetDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed))
-        {
-            Debug.Log("Trigger pressed: " + triggerPressed);
-        }
-        if (targetDevice.TryGetFeatureValue(CommonUsages.grip, out float gripValue))
-        {
-            Debug.Log("Trigger pressed: " + gripValue);
-        }
-        if (targetDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axisValue))
-        {
-            Debug.Log("Joystick: " + axisValue);
-        }
-    }
 }
