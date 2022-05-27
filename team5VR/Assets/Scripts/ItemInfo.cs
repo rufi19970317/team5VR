@@ -6,6 +6,7 @@ public class ItemInfo : MonoBehaviour
 {
     [SerializeField]
     private string itemID;
+    public bool inSlot = false;
     public Vector3 slotRotation = Vector3.zero;
     public Vector3 defauultSize;
     // Start is called before the first frame update
