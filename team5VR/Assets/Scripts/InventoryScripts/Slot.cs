@@ -34,30 +34,35 @@ public class Slot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Item"))
         {
-            if (inItem)
+            if (collision.gameObject.GetComponent<ItemInfo>().inSlot == false)
             {
-                if (itemID == collision.gameObject.GetComponent<ItemInfo>().GetId())
+                if (inItem)
                 {
+                    if (itemID == collision.gameObject.GetComponent<ItemInfo>().GetId())
+                    {
+                        collision.gameObject.GetComponent<ItemInfo>().inSlot = true;
+                        stockNum += 1;
+                        UpdateStockText();
+                        Debug.Log(stockNum);
+                        Destroy(collision.gameObject);
+                    }
+                }
+                else
+                {
+                    obj = collision.gameObject;
+                    itemID = collision.gameObject.GetComponent<ItemInfo>().GetId();
+                    obj.gameObject.GetComponent<ItemInfo>().inSlot = true;
+                    inItem = true;
                     stockNum += 1;
                     UpdateStockText();
-                    Debug.Log(stockNum);
-                    Destroy(collision.gameObject);
+                    stockText.gameObject.SetActive(true);
+                    obj.GetComponent<Rigidbody>().isKinematic = true;
+                    obj.transform.SetParent(this.transform);
+                    obj.transform.localPosition = Vector3.zero;
+                    obj.transform.localEulerAngles = obj.GetComponent<ItemInfo>().slotRotation;
+                    obj.GetComponent<Collider>().enabled = false;
+                    slotImage.color = Color.gray;
                 }
-            }
-            else
-            {
-                obj = collision.gameObject;
-                itemID = collision.gameObject.GetComponent<ItemInfo>().GetId();
-                inItem = true;
-                stockNum += 1;
-                UpdateStockText();
-                stockText.gameObject.SetActive(true);
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-                obj.transform.SetParent(this.transform);
-                obj.transform.localPosition = Vector3.zero;
-                obj.transform.localEulerAngles = obj.GetComponent<ItemInfo>().slotRotation;
-                obj.GetComponent<Collider>().enabled = false;
-                slotImage.color = Color.gray;
             }
         }
     }
@@ -74,6 +79,7 @@ public class Slot : MonoBehaviour
     {
         GameObject temp = Instantiate(obj, handTransform.position, Quaternion.Euler(obj.GetComponent<ItemInfo>().slotRotation));
         temp.transform.localScale = obj.GetComponent<ItemInfo>().defauultSize;
+        temp.gameObject.GetComponent<ItemInfo>().inSlot = false;
         temp.GetComponent<Collider>().enabled = true;
         temp.name = obj.name;
         stockNum -= 1;
