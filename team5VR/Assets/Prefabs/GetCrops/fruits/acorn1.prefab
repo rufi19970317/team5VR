@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1853861920520841072}
   - component: {fileID: 1853861920520841078}
   - component: {fileID: 1853861920520841073}
+  - component: {fileID: -5376826870731361368}
   m_Layer: 0
   m_Name: acorn1
   m_TagString: fruits
@@ -229,3 +230,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-5376826870731361368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853861920694714163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efbd113703752048b37db1d2da84124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: acorn
+  inSlot: 0
+  slotRotation: {x: 0, y: 0, z: 0}
+  defauultSize: {x: 0, y: 0, z: 0}
