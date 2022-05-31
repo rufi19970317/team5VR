@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 617908626585187688}
   - component: {fileID: 4305801090996836209}
   - component: {fileID: 6310002047013688954}
+  - component: {fileID: -1532803182524119848}
   m_Layer: 0
   m_Name: apple
-  m_TagString: Untagged
+  m_TagString: fruits
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 3
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -214,3 +215,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &-1532803182524119848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617908626587184040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efbd113703752048b37db1d2da84124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: apple
+  inSlot: 0
+  slotRotation: {x: 0, y: 0, z: 0}
+  defauultSize: {x: 0, y: 0, z: 0}

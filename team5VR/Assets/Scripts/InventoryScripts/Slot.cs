@@ -32,7 +32,7 @@ public class Slot : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Item"))
+        if (collision.gameObject.CompareTag("Item") || collision.gameObject.CompareTag("fruits") || collision.gameObject.CompareTag("crops"))
         {
             if (collision.gameObject.GetComponent<ItemInfo>().inSlot == false)
             {
@@ -43,7 +43,6 @@ public class Slot : MonoBehaviour
                         collision.gameObject.GetComponent<ItemInfo>().inSlot = true;
                         stockNum += 1;
                         UpdateStockText();
-                        Debug.Log(stockNum);
                         Destroy(collision.gameObject);
                     }
                 }

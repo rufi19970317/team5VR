@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7119695993377348710}
   - component: {fileID: 5987563303922038032}
   - component: {fileID: 5177605735203946935}
+  - component: {fileID: 6763064527223194638}
   m_Layer: 0
   m_Name: cherry2
   m_TagString: fruits
@@ -229,3 +230,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &6763064527223194638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469072202344490439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efbd113703752048b37db1d2da84124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: cherry
+  inSlot: 0
+  slotRotation: {x: 0, y: 0, z: 0}
+  defauultSize: {x: 0, y: 0, z: 0}
