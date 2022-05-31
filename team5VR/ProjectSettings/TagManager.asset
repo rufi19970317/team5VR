@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Slot
   - Item
+  - Wood
+  - SWood
+  - Torch
   layers:
   - Default
   - TransparentFX
