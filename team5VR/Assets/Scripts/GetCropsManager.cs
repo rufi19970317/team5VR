@@ -13,6 +13,7 @@ public class GetCropsManager : MonoBehaviour
     Quaternion respawnRot;
     public GameObject[] fruitsArray;
     public GameObject[] cropsArray;
+    public GameObject leftHandController;
     public void SaveFruitsAndCropsPosAndRot(HoverEnterEventArgs args)
     {
         if (args.interactableObject.transform.CompareTag("fruits") || args.interactableObject.transform.CompareTag("crops"))
