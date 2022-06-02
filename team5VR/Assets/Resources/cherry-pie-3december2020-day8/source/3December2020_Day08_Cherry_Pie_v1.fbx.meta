@@ -3,7 +3,17 @@ guid: 7afce31cba0546243a7ad8c110f51c0a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassOpaque
+    second: {fileID: 2100000, guid: bce0bc5a3fe16534b8161696943d607d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pie_Mass
+    second: {fileID: 2100000, guid: e30c436c360ab614ca77e2e1a3e8a737, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
