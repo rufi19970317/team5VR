@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efbd113703752048b37db1d2da84124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: acorn
+  itemID: Acorn
   inSlot: 0
   slotRotation: {x: 0, y: 0, z: 0}
   defauultSize: {x: 0, y: 0, z: 0}
