@@ -21,8 +21,8 @@ public class CookingManager : MonoBehaviour
     public Dictionary<string, int> foodIngredientDic = new Dictionary<string, int>()
     {
         {"Apple", 0},
-        {"Raspberry", 0},
-        {"Strawberry", 0},
+        {"Acorn", 0},
+        {"Cherry", 0},
         {"Carrot", 0},
         {"Corn", 0},
         {"Eggplant", 0},
@@ -34,7 +34,6 @@ public class CookingManager : MonoBehaviour
     private int foodIngredientSum = 0;
     private int FruitSum = 0;
     private int RootSum = 0;
-    private string FoodName = null;
     private GameObject FoodObject;
 
     void Start()
@@ -47,15 +46,15 @@ public class CookingManager : MonoBehaviour
     {
         if (!isCook)
         {
-            if (other.CompareTag("Ingredient"))
+            if (other.CompareTag("fruits") || other.CompareTag("crops"))
             {
-                if (foodIngredientDic.ContainsKey(other.name))
+                if (foodIngredientDic.ContainsKey(other.GetComponent<ItemInfo>().GetId()))
                 {
                     if (foodIngredientSum < 3)
                     {
-                        foodIngredientDic[other.name]++;
+                        foodIngredientDic[other.GetComponent<ItemInfo>().GetId()]++;
 
-                        FruitSum = foodIngredientDic["Apple"] + foodIngredientDic["Raspberry"] + foodIngredientDic["Strawberry"];
+                        FruitSum = foodIngredientDic["Apple"] + foodIngredientDic["Acorn"] + foodIngredientDic["Cherry"];
                         RootSum = foodIngredientDic["Carrot"] + foodIngredientDic["Corn"] + foodIngredientDic["Eggplant"]
                             + foodIngredientDic["Tomato"] + foodIngredientDic["Turnip"];
                         foodIngredientSum = FruitSum + RootSum;
@@ -99,25 +98,21 @@ public class CookingManager : MonoBehaviour
         {
             FoodObject = Instantiate(FoodSet[0], transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             FoodObject.GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEntered);
-            FoodName = "Pie";
         }
         else if (RootSum >= 2 && FruitSum == 0)
         {
             FoodObject = Instantiate(FoodSet[1], transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             FoodObject.GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEntered);
-            FoodName = "Soup";
         }
         else if (FruitSum == 1 && RootSum == 2)
         {
             FoodObject = Instantiate(FoodSet[2], transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             FoodObject.GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEntered);
-            FoodName = "Curry";
         }
         else
         {
             FoodObject = Instantiate(FoodSet[3], transform.position + new Vector3(0, 0.8f, 0), Quaternion.identity);
             FoodObject.GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEntered);
-            FoodName = "Garbage";
         }
     }
 
@@ -153,7 +148,6 @@ public class CookingManager : MonoBehaviour
         FoodObject.GetComponent<Rigidbody>().isKinematic = false;
         FoodObject = null;
         isCook = false;
-        FoodName = null;
         cookingUIUpdate();
     }
 
