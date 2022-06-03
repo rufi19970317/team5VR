@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2194102617668433807, guid: c63408486f7a78e4c8da91b8f70ebec8, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5626027933526418024, guid: c63408486f7a78e4c8da91b8f70ebec8, type: 3}
       propertyPath: m_Name
       value: Carrot_Fruit

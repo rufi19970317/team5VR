@@ -133,13 +133,13 @@ public class GetCropsManager : MonoBehaviour
         respawnObject = Instantiate(obj, pos, rot);
         respawnObject.transform.parent = obj.transform.parent;
         respawnObject.transform.name = obj.name;
-        if (obj.gameObject.CompareTag("crops"))
+        /*if (obj.gameObject.CompareTag("crops"))
         {
             rigidBody = respawnObject.transform.GetComponent<Rigidbody>();
             rigidBody.useGravity = false;
             rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         }
-        respawnObject.SetActive(true);
+        respawnObject.SetActive(true);*/
         Debug.Log("Respawn complete " + respawnObject + respawnObject.transform.position);
     }
 
