@@ -10,6 +10,8 @@ public class fireBehavior : MonoBehaviour
     private int woodNum = 0;
     public float time;
     bool fireON = false;
+    public AudioSource audio;
+
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class fireBehavior : MonoBehaviour
 
         if (woodNum >= 3 && collision.transform.CompareTag("Torch"))
         {
+            audio.Play();
             fireFX.SetActive(true);
             fireON = true;
         }        
