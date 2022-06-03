@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Slot
   - Item
-  - Telescope
+  - fruits
+  - crops
+  - RawBBQ
+  - BBQ
   layers:
   - Default
   - TransparentFX

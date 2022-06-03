@@ -21,45 +21,50 @@ public class Slot : MonoBehaviour
         defaultColor = slotImage.color;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InsertItem(GameObject item)
     {
-        if(obj != null)
+        if (item.CompareTag("fruits") || item.CompareTag("crops"))
         {
-            obj.transform.localPosition = Vector3.zero;
+            if (item.GetComponent<ItemInfo>().inSlot == false)
+            {
+                if (inItem)
+                {
+                    if (itemID == item.GetComponent<ItemInfo>().GetId())
+                    {
+                        item.GetComponent<ItemInfo>().inSlot = true;
+                        stockNum += 1;
+                        UpdateStockText();
+                        Destroy(item.gameObject);
+                    }
+                }
+                else
+                {
+                    obj = Instantiate(item);
+                    obj.name = item.name;
+                    ItemInfo info = obj.GetComponent<ItemInfo>();
+                    itemID = info.GetId();
+                    info.inSlot = true;
+                    inItem = true;
+                    stockNum += 1;
+                    UpdateStockText();
+                    stockText.gameObject.SetActive(true);
+                    obj.GetComponent<Rigidbody>().isKinematic = true;
+                    obj.transform.SetParent(this.transform);
+                    obj.transform.localPosition = info.offset;
+                    obj.transform.localScale = info.slotSize;
+                    obj.transform.localEulerAngles = info.slotRotation;
+                    obj.GetComponent<XRGrabInteractable>().enabled = false;
+                    obj.GetComponent<Collider>().enabled = false;
+                    Destroy(item.gameObject);
+                    slotImage.color = Color.gray;
+                }
+            }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public string GetItemIDinSlot()
     {
-        if (collision.gameObject.CompareTag("Item"))
-        {
-            if (inItem)
-            {
-                if (itemID == collision.gameObject.GetComponent<ItemInfo>().GetId())
-                {
-                    stockNum += 1;
-                    UpdateStockText();
-                    Debug.Log(stockNum);
-                    Destroy(collision.gameObject);
-                }
-            }
-            else
-            {
-                obj = collision.gameObject;
-                itemID = collision.gameObject.GetComponent<ItemInfo>().GetId();
-                inItem = true;
-                stockNum += 1;
-                UpdateStockText();
-                stockText.gameObject.SetActive(true);
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-                obj.transform.SetParent(this.transform);
-                obj.transform.localPosition = Vector3.zero;
-                obj.transform.localEulerAngles = obj.GetComponent<ItemInfo>().slotRotation;
-                obj.GetComponent<Collider>().enabled = false;
-                slotImage.color = Color.gray;
-            }
-        }
+        return itemID;
     }
 
     public bool IsinItem()
@@ -74,12 +79,14 @@ public class Slot : MonoBehaviour
     {
         GameObject temp = Instantiate(obj, handTransform.position, Quaternion.Euler(obj.GetComponent<ItemInfo>().slotRotation));
         temp.transform.localScale = obj.GetComponent<ItemInfo>().defauultSize;
+        temp.gameObject.GetComponent<ItemInfo>().inSlot = false;
+        temp.GetComponent<XRGrabInteractable>().enabled = true;
         temp.GetComponent<Collider>().enabled = true;
         temp.name = obj.name;
         stockNum -= 1;
         UpdateStockText();
         if (stockNum == 0)
-        {   
+        {
             Destroy(obj);
             stockText.gameObject.SetActive(false);
             slotImage.color = defaultColor;
