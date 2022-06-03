@@ -13,7 +13,9 @@ public class GetCropsManager : MonoBehaviour
     Quaternion respawnRot;
     public GameObject[] fruitsArray;
     public GameObject[] cropsArray;
-    public GameObject leftHandController;
+    public AccessInventory inventory;
+
+
     public void SaveFruitsAndCropsPosAndRot(HoverEnterEventArgs args)
     {
         if (args.interactableObject.transform.CompareTag("fruits") || args.interactableObject.transform.CompareTag("crops"))
@@ -46,16 +48,18 @@ public class GetCropsManager : MonoBehaviour
         {
             if(args.interactableObject.transform.name == "apple")
             {
-                fruits[0] += 1;
+                inventory.SlotCheck(args.interactableObject.transform.gameObject);
+
                 Debug.Log("I GOT APPLE " + fruits[0]);
-                args.interactableObject.transform.gameObject.SetActive(false);
+                //args.interactableObject.transform.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(fruitsArray[4], respawnPos, respawnRot));
             }
             if (args.interactableObject.transform.name == "cherry1" || args.interactableObject.transform.name == "cherry2")
             {
-                fruits[1] += 1;
+                inventory.SlotCheck(args.interactableObject.transform.gameObject);
+
                 Debug.Log("I GOT cherry " + fruits[1]);
-                args.interactableObject.transform.gameObject.SetActive(false);
+               //args.interactableObject.transform.gameObject.SetActive(false);
                 if (args.interactableObject.transform.name == "cherry1")
                 {
                     StartCoroutine(RespawnCropsFruits(fruitsArray[0], respawnPos, respawnRot));
@@ -69,9 +73,9 @@ public class GetCropsManager : MonoBehaviour
             if (args.interactableObject.transform.name == "acorn1" || args.interactableObject.transform.name == "acorn2")
             {
                 Debug.Log("Pos " + respawnPos);
-                fruits[2] += 1;
-                Debug.Log("I GOT acorn " + fruits[2]);
-                args.interactableObject.transform.gameObject.SetActive(false);
+                inventory.SlotCheck(args.interactableObject.transform.gameObject);
+
+                //args.interactableObject.transform.gameObject.SetActive(false);
                 if (args.interactableObject.transform.name == "acorn1")
                 {
                     StartCoroutine(RespawnCropsFruits(fruitsArray[2], respawnPos, respawnRot));
@@ -91,37 +95,32 @@ public class GetCropsManager : MonoBehaviour
             
             if (collision.gameObject.name == "Turnip_Fruit")
             {
-                crops[0] += 1;
-                collision.gameObject.SetActive(false);
-                Debug.Log(collision.gameObject.name + " TURNIP Count: " + crops[0]);
+                inventory.SlotCheck(collision.gameObject);
+                //collision.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(cropsArray[0], respawnPos, respawnRot));
             }
             if (collision.gameObject.name == "Carrot_Fruit")
             {
-                crops[1] += 1;
-                collision.gameObject.SetActive(false);
-                Debug.Log(collision.gameObject.name + " CARROT Count: " + crops[1]);
+                inventory.SlotCheck(collision.gameObject);
+               //collision.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(cropsArray[1], respawnPos, respawnRot));
             }
             if (collision.gameObject.name == "Tomato_Fruit")
             {
-                crops[2] += 1;
-                collision.gameObject.SetActive(false);
-                Debug.Log( collision.gameObject.name + " TOMATO Count: " + crops[2]);
+                inventory.SlotCheck(collision.gameObject);
+                //collision.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(cropsArray[2], respawnPos, respawnRot));
             }
             if (collision.gameObject.name == "Corn_Fruit")
             {
-                crops[3] += 1;
-                collision.gameObject.SetActive(false);
-                Debug.Log(collision.gameObject.name + " CORN Count: " + crops[3]);
+                inventory.SlotCheck(collision.gameObject);
+                //collision.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(cropsArray[3], respawnPos, respawnRot));
             }
             if (collision.gameObject.name == "Eggplant_Fruit")
             {
-                crops[4] += 1;
-                collision.gameObject.SetActive(false);
-                Debug.Log(collision.gameObject.name + " EGG Count: " + crops[4]);
+                inventory.SlotCheck(collision.gameObject);
+                //collision.gameObject.SetActive(false);
                 StartCoroutine(RespawnCropsFruits(cropsArray[4], respawnPos, respawnRot));
             }
         }
