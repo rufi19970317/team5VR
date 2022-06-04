@@ -14,6 +14,8 @@ public class telescopeCamController : MonoBehaviour
 
     public Material blackPanel;
 
+    public float a = 0;
+
     public float speed = 1.0f;
     public GameObject target;
     private Transform targetP;
@@ -50,7 +52,6 @@ public class telescopeCamController : MonoBehaviour
     {
         float dist = Vector3.Distance(subCam.transform.position, targetP.position);
 
-        Debug.Log(dist);
 
         if (dist < 1.5)
             StartCoroutine(FadeCoroutine());
@@ -63,15 +64,14 @@ public class telescopeCamController : MonoBehaviour
         float step = speed * 0.1f * Time.deltaTime;
         subCam.transform.position = Vector3.MoveTowards(subCam.transform.position, targetP.position, step);
 
-        Debug.Log(subCam.transform.position + " " + targetP.position + " " + step);
     }
 
     IEnumerator FadeCoroutine()
     {
-        float a = 0;
+        
         while (a < 1.0f)
         {
-            a += 0.05f;
+            a += 0.005f;
             yield return new WaitForSeconds(0.01f);
             blackPanel.color = new Color(0, 0, 0, a);
 
@@ -81,6 +81,7 @@ public class telescopeCamController : MonoBehaviour
 
     void ScopeView()
     {
+        Debug.Log("mode 2");
         subCam.gameObject.SetActive(false);
         scopeCam.gameObject.SetActive(true);
 
