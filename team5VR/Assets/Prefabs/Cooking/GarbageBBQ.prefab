@@ -506,9 +506,9 @@ GameObject:
   - component: {fileID: -5891709284862100632}
   - component: {fileID: -4360127882338180684}
   - component: {fileID: 5885481784022032463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GarbageBBQ
-  m_TagString: Untagged
+  m_TagString: BBQ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,8 +566,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7494848, y: 2.2550561, z: 8.89165}
-  m_Center: {x: 0.3042557, y: 0.15212835, z: 3.9458253}
+  m_Size: {x: 1.3423012, y: 1.1901577, z: 8.89165}
+  m_Center: {x: 0.24720533, y: 0.13311176, z: 3.9458253}
 --- !u!114 &-4360127882338180684
 MonoBehaviour:
   m_ObjectHideFlags: 0
