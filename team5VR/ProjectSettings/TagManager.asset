@@ -8,8 +8,9 @@ TagManager:
   - Item
   - fruits
   - crops
-  - RawBBQ
   - BBQ
+  - Telescope
+  - bucket
   layers:
   - Default
   - TransparentFX
