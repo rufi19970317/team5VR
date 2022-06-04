@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3486807, g: 0.97232187, b: 1.1251491, a: 1}
+  m_IndirectSpecularColor: {r: 0.34859437, g: 0.97225493, b: 1.125673, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7158,6 +7158,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384700429, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1464168031}
+    - target: {fileID: 2134240983, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 1105240264}
+    - target: {fileID: 2134240983, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1565571573}
     - target: {fileID: 7104736100071375276, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -7202,14 +7214,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.204
       objectReference: {fileID: 0}
+    - target: {fileID: 7104736100071375277, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 1105240264}
+    - target: {fileID: 7104736100071375277, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1565571573}
     - target: {fileID: 7104736100071375278, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
       propertyPath: m_Name
       value: Telescope
       objectReference: {fileID: 0}
-    - target: {fileID: 7104736100403549858, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 7104736100194964111, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1464168031}
+    - target: {fileID: 7104736101333637026, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 1105240264}
+    - target: {fileID: 7104736101333637026, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1565571573}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
 --- !u!114 &1028322638 stripped
@@ -7661,7 +7689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105240264}
   m_LocalRotation: {x: 0, y: -0.7660445, z: 0, w: 0.64278764}
-  m_LocalPosition: {x: 396.419, y: 1.888, z: 377.068}
+  m_LocalPosition: {x: 418, y: 25.1, z: 275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 167503723}
@@ -12604,18 +12632,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1854577726}
         m_TargetAssemblyTypeName: GetItemInSlot, Assembly-CSharp
         m_MethodName: GetItem
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1028322638}
-        m_TargetAssemblyTypeName: telescopeCamController, Assembly-CSharp
-        m_MethodName: MoveCam
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
