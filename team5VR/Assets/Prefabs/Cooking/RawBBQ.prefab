@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: -2619777859891219479}
   m_Layer: 0
   m_Name: RawBBQ
-  m_TagString: RawBBQ
+  m_TagString: BBQ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrill: 0
-  grilTime: 0
   bbq: {fileID: 8508516293849522353, guid: 1123f87dbb07cb44286d61f418a1cde7, type: 3}
 --- !u!54 &-3701619814585740266
 Rigidbody:
@@ -250,8 +249,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7494848, y: 2.2550561, z: 8.89165}
-  m_Center: {x: 0.3042557, y: 0.15212835, z: 3.9458253}
+  m_Size: {x: 1.3423012, y: 1.1901577, z: 8.89165}
+  m_Center: {x: 0.24720533, y: 0.13311176, z: 3.9458253}
 --- !u!114 &-2619777859891219479
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -167,6 +167,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.team5VR
     Standalone: com.DefaultCompany.team5VR
   buildNumber:
     Standalone: 0

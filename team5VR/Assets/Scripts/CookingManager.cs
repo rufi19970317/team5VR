@@ -214,13 +214,12 @@ public class CookingManager : MonoBehaviour
 
     private void IngredientImageReset()
     {
-        IngredientImage1.sprite = null;
-        IngredientImage2.sprite = null;
-        IngredientImage3.sprite = null;
-
         IngredientImage1.gameObject.SetActive(false);
+        IngredientImage1.sprite = null;
         IngredientImage2.gameObject.SetActive(false);
+        IngredientImage2.sprite = null;
         IngredientImage3.gameObject.SetActive(false);
+        IngredientImage3.sprite = null;
     }
 
     // 재료 못 넣는다는 Text 띄우기
