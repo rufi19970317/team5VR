@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3469827806033938154}
   - component: {fileID: 1507033669560346004}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Curry
   m_TagString: Untagged
   m_Icon: {fileID: 0}

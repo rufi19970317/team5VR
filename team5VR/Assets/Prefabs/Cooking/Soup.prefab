@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 1230413139929798598}
   - component: {fileID: 8611947655331164955}
   - component: {fileID: 1867756868152241165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Soup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
