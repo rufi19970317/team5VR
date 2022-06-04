@@ -76,10 +76,9 @@ public class ScopeViewController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        deviceInput();
         if (!isfade) StartCoroutine(FadeinCoroutine());
-       else StartCoroutine(FadeoutCoroutine());
-
+        else StartCoroutine(FadeoutCoroutine());
+        deviceInput();
     }
 
     public int getPlay()
