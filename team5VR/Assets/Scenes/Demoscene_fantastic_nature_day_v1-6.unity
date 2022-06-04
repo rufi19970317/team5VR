@@ -875,7 +875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949969912022898752, guid: 44be1bbf631ad2e44b8332b356483cb4, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949969912022898752, guid: 44be1bbf631ad2e44b8332b356483cb4, type: 3}
       propertyPath: m_Constraints
@@ -3384,6 +3384,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cherry tree
       objectReference: {fileID: 0}
+    - target: {fileID: 2698029753391136180, guid: a7b87e77710894e4ca859caa793e6bed, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896687927835989821, guid: a7b87e77710894e4ca859caa793e6bed, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b87e77710894e4ca859caa793e6bed, type: 3}
 --- !u!4 &489164802 stripped
@@ -3632,6 +3640,10 @@ PrefabInstance:
     - target: {fileID: 3500911851328657710, guid: 45b076f6d0e765540a5ebd1b6cef1132, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773016745985688720, guid: 45b076f6d0e765540a5ebd1b6cef1132, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4773016746469342067, guid: 45b076f6d0e765540a5ebd1b6cef1132, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
