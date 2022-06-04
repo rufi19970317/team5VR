@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 3861700378457258608}
   - component: {fileID: 6078875791843620775}
   - component: {fileID: -6226808188884213110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BBQ
   m_TagString: BBQ
   m_Icon: {fileID: 0}
@@ -989,8 +989,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7494848, y: 2.2550561, z: 8.89165}
-  m_Center: {x: 0.3042557, y: 0.15212835, z: 3.9458253}
+  m_Size: {x: 1.3423012, y: 1.1901577, z: 8.89165}
+  m_Center: {x: 0.24720533, y: 0.13311176, z: 3.9458253}
 --- !u!114 &6078875791843620775
 MonoBehaviour:
   m_ObjectHideFlags: 0

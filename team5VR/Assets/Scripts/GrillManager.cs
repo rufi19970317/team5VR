@@ -3,24 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GrillManager : MonoBehaviour
-{    private void OnTriggerEnter(Collider other)
+{
+    public AudioSource audio;
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("RawBBQ"))
+        if (other.CompareTag("BBQ"))
         {
-            BBQ bbq = other.GetComponent<BBQ>();
-            bbq.isGrill = true;
-        }
-        else if (other.CompareTag("BBQ"))
-        {
-            BBQ bbq = other.GetComponent<BBQ>();
-            bbq.isGrill = true;
+            if (other.GetComponent<BBQ>() != null)
+            {
+                BBQ bbq = other.GetComponent<BBQ>();
+                bbq.isGrill = true;
+            }
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("BBQ"))
+        {
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("RawBBQ") || other.CompareTag("BBQ"))
+        if (other.CompareTag("BBQ"))
         {
-            other.GetComponent<BBQ>().isGrill = false;
+            if (other.GetComponent<BBQ>() != null)
+            {
+                other.GetComponent<BBQ>().isGrill = false;
+            }
+            if (audio.isPlaying)
+            {
+                audio.Pause();
+            }
         }
     }
 }
