@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 3861700378457258608}
   - component: {fileID: 6078875791843620775}
   - component: {fileID: -6226808188884213110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BBQ
   m_TagString: BBQ
   m_Icon: {fileID: 0}

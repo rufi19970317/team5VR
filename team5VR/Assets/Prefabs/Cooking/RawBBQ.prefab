@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: -3701619814585740266}
   - component: {fileID: -6935570718661939881}
   - component: {fileID: -2619777859891219479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RawBBQ
   m_TagString: BBQ
   m_Icon: {fileID: 0}
