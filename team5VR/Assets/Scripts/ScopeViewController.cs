@@ -7,48 +7,79 @@ public class ScopeViewController : MonoBehaviour
     public Camera mainCam;
     public GameObject origin;
     public GameObject sub;
+    public Material blackPanel;
 
-    public float xmove = 0;
-    public float ymove = 0;
     public float aaa = 0;
+    public float a = 0;
+
     private Vector3 pos;
     private Vector3 rot;
 
+    bool isfade = false;
+    public int play = 0;
     // Start is called before the first frame update
     void Start()
     {
-        pos = transform.position;
-        rot = transform.eulerAngles;
+        isfade = false;
+        a = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(FadeCoroutine());
-        
+       if(!isfade) StartCoroutine(FadeinCoroutine());
+       else StartCoroutine(FadeoutCoroutine());
+
     }
 
-    //일단 마우스로
-    void Zoom()
+    public int getPlay()
     {
-        
+        return play;
     }
 
-    IEnumerator FadeCoroutine()
+    public void setPlay(int i)
+    {
+        play = i;
+    }
+
+
+    IEnumerator FadeinCoroutine()
+    {
+        while (a > 0f)
+        {
+            a -= 0.005f;
+            yield return new WaitForSeconds(0.01f);
+            blackPanel.color = new Color(0, 0, 0, a);
+
+            if (a <= 0f) { 
+                isfade = true;
+                sub.SetActive(false);
+                sub.SetActive(true);
+            }
+        }
+    }
+
+    IEnumerator FadeoutCoroutine()
     {
         while (aaa < 1.0f)
         {
-            aaa += 0.00005f;
+            aaa += 0.0005f;
             yield return new WaitForSeconds(0.01f);
-
-            if (aaa >= 1.0f) {
-                aaa = 0;
-                origin.SetActive(true);
-                mainCam.gameObject.SetActive(true);
-                sub.SetActive(false);
-                this.gameObject.SetActive(false);
-                
-            }
         }
+
+        while (a < 1.0f)
+        {
+            a += 0.0005f;
+            yield return new WaitForSeconds(0.01f);
+            blackPanel.color = new Color(0, 0, 0, a);
+
+            if (a >= 1.0f)
+            {
+                play = 1;
+                isfade = false;
+                a = 1f;
+                aaa = 0f;
+            }
+        }       
     }
 }
