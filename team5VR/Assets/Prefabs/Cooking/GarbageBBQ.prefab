@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: -5891709284862100632}
   - component: {fileID: -4360127882338180684}
   - component: {fileID: 5885481784022032463}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GarbageBBQ
   m_TagString: BBQ
   m_Icon: {fileID: 0}
