@@ -9,16 +9,16 @@ TagManager:
   - fruits
   - crops
   - BBQ
-  - Telescope
   - bucket
+  - Telescope
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Food
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
