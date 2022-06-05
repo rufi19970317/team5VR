@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3486807, g: 0.97232187, b: 1.1251491, a: 1}
+  m_IndirectSpecularColor: {r: 0.34859437, g: 0.97225493, b: 1.125673, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7429,6 +7429,10 @@ PrefabInstance:
       value: 0.204
       objectReference: {fileID: 0}
     - target: {fileID: 7104736100071375277, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104736100071375277, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
       propertyPath: origin
       value: 
       objectReference: {fileID: 1105240264}
@@ -7452,6 +7456,10 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1565571573}
+    - target: {fileID: 7104736101333637026, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
+      propertyPath: controllerCharacteristics
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a06e41e48714cb47adffb5e9aec848a, type: 3}
 --- !u!114 &1028322638 stripped

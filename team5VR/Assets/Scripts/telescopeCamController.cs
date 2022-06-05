@@ -16,7 +16,7 @@ public class telescopeCamController : MonoBehaviour
 
     public float a = 0;
 
-    public float speed = 1.0f;
+    public float speed = 3.0f;
     public GameObject target;
     private Transform targetP;
 
@@ -81,6 +81,7 @@ public class telescopeCamController : MonoBehaviour
 
     void ScopeView()
     {
+        a = 0;
         Debug.Log("mode 2");
         subCam.gameObject.SetActive(false);
         scopeCam.gameObject.SetActive(true);
